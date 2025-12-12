@@ -66,10 +66,9 @@ export default function Footer() {
           <p className="text-gray-600 mb-2">Secure payment with:</p>
 
           <div className="flex gap-2 mb-4">
-            <div className="w-10 h-6 bg-gray-300 rounded"></div>
-            <div className="w-10 h-6 bg-gray-300 rounded"></div>
-            <div className="w-10 h-6 bg-gray-300 rounded"></div>
-            <div className="w-10 h-6 bg-gray-300 rounded"></div>
+            <div className="w-10 h-6 "> <img src="/assets/visa.png" alt="" /> </div>
+            <div className="w-10 h-6 "><img src="/assets/card.png" alt="" /></div>
+            <div className="w-10 h-6 "><img src="/assets/paypal.png" alt="" /> </div>
           </div>
 
           <button className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition">

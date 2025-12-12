@@ -10,6 +10,7 @@ import Home from './components/Home/Home.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import Login from './components/Login/Login.jsx';
 import Forgot from './components/Forgot/Forgot.jsx';
+import Error404 from './components/page/Error404/Error404.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             { path: "/forgot", Component: Forgot },
 
     ]
+  },
+    {
+    path: "*",
+    Component: Error404,
   },
 ]);
 

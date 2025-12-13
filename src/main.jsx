@@ -1,8 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
-
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Root from './layout/Root/Root.jsx';
@@ -24,13 +22,35 @@ const router = createBrowserRouter([
     path: "/",
     Component: Root,
     children: [
-            { index: true, Component: Home },
-            { path: "login", Component: Login },
-            { path: "signup", Component: Signup },
-            { path: "/forgot", Component: Forgot },
-            {path: "/alltickets", element: <PrivateRoutes> <AllTickets></AllTickets> </PrivateRoutes> },
-            {path: "/dashboard", element: <PrivateRoutes> <Dashboard></Dashboard> </PrivateRoutes> },
-            {path: "/myprofile", element: <PrivateRoutes> <MyProfile></MyProfile>  </PrivateRoutes>},
+            { 
+              index: true, 
+              Component: Home 
+            },
+
+            { 
+              path: "login", 
+              Component: Login 
+            },
+            { 
+              path: "signup", 
+              Component: Signup 
+            },
+            { 
+              path: "/forgot", 
+              Component: Forgot 
+            },
+            {
+              path: "/alltickets", 
+              element: <PrivateRoutes> <AllTickets></AllTickets> </PrivateRoutes> 
+            },
+            {
+              path: "/dashboard", 
+              element: <PrivateRoutes> <Dashboard></Dashboard> </PrivateRoutes> 
+            },
+            {
+              path: "/myprofile", 
+              element: <PrivateRoutes> <MyProfile></MyProfile>  </PrivateRoutes>
+            },
 
     ]
   },

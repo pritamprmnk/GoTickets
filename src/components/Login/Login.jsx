@@ -1,7 +1,43 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { use } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router';
+import { AuthContext } from '../../contexts/AuthContext/AuthContext';
 
 const Login = () => {
+
+  const { signInuser, signInWithGoogle } = use(AuthContext);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location)
+
+  const handleLogin = event => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    console.log(email,password);
+    signInuser(email,password)
+    .then(result =>{
+    console.log(result.user)
+    event.target.reset();
+    navigate(location.state || "/")
+  })
+  .catch(error =>{
+    console.log(error)
+  })
+
+  }
+
+  const handleGoogleSignIn = () =>{
+    signInWithGoogle()
+    .then(result =>{
+      console.log(result.user)
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+
+  }
+
     return (
             <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
@@ -14,7 +50,7 @@ const Login = () => {
           <p className="text-red-500 text-center mb-3"></p>
         
 
-        <form >
+        <form onSubmit={handleLogin}>
           <label className="text-gray-700 font-medium">Email</label>
           <input
             type="email"
@@ -55,7 +91,7 @@ const Login = () => {
           <div className="flex-1 h-px bg-gray-300"></div>
         </div>
 
-        <button
+        <button onClick={handleGoogleSignIn}
           
           className="w-full border py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 text-black"
         >

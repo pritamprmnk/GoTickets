@@ -67,7 +67,8 @@ export default function Footer() {
 
           <div className="flex gap-2 mb-4">
             <div className="w-10 h-6 "> <img src="/assets/visa.png" alt="" /> </div>
-            <div className="w-10 h-6 "><img src="/assets/card.png" alt="" /></div>
+            <div className="w-10 h-6 "><img src="/assets/american-express.png" alt="" /></div>
+            <div className="w-10 h-6 "><img src="/assets/card.png" alt="" /> </div>
             <div className="w-10 h-6 "><img src="/assets/paypal.png" alt="" /> </div>
           </div>
 

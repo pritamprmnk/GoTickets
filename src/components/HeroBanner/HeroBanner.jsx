@@ -4,9 +4,8 @@ const slides = [
   { img: "/assets/airplane.jpg", },
   { img: "/assets/bus2.jpeg",  },
   { img: "/assets/trainpp.jpeg",  },
-  { img: "/assets/trainppp.jpg",  },
-  { img: "/assets/train.jpg",  },
   { img: "/assets/train2.jpg",  },
+  { img: "/assets/train.jpg",  },
 ];
 
 const HeroBanner = () => {

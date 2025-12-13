@@ -10,7 +10,14 @@ import Home from './components/Home/Home.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import Login from './components/Login/Login.jsx';
 import Forgot from './components/Forgot/Forgot.jsx';
-import Error404 from './components/page/Error404/Error404.jsx';
+import Error404 from './page/Error404.jsx';
+import AuthProvider from './contexts/AuthProvider/AuthProvider.jsx';
+import AllTickets from './components/AllTickets/AllTickets.jsx';
+import Dashboard from './components/Dashboard/Dashboard.jsx';
+import PrivateRoutes from './Routes/PrivateRoutes.jsx';
+import { Toaster } from 'react-hot-toast';
+import MyProfile from './components/MyProfile/MyProfile.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -21,17 +28,26 @@ const router = createBrowserRouter([
             { path: "login", Component: Login },
             { path: "signup", Component: Signup },
             { path: "/forgot", Component: Forgot },
+            {path: "/alltickets", element: <PrivateRoutes> <AllTickets></AllTickets> </PrivateRoutes> },
+            {path: "/dashboard", element: <PrivateRoutes> <Dashboard></Dashboard> </PrivateRoutes> },
+            {path: "/myprofile", element: <PrivateRoutes> <MyProfile></MyProfile>  </PrivateRoutes>},
 
     ]
   },
     {
     path: "*",
-    Component: Error404,
+    Component: Error404
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <RouterProvider router={router}></RouterProvider>
+   <AuthProvider>
+          <Toaster
+        position="top-center"
+        reverseOrder={false}
+      /> 
+    <RouterProvider router={router}></RouterProvider>
+   </AuthProvider>
   </StrictMode>,
 )

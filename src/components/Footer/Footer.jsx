@@ -1,9 +1,10 @@
 import { Mail, Phone, Facebook, X, Instagram, Linkedin, Globe } from "lucide-react";
+import { CiLock } from "react-icons/ci";
 
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 text-gray-800 py-12 mt-10 ">
+    <footer className="from-gray-50 to-white text-gray-800 py-12 mt-10 ">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
 
         {/* Logo + About */}
@@ -73,7 +74,7 @@ export default function Footer() {
           </div>
 
           <button className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition">
-            <span>🔒</span>
+            <span><CiLock /></span>
             SSL Secure Payment
           </button>
         </div>

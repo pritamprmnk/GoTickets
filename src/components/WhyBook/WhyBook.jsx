@@ -25,7 +25,7 @@ export default function WhyBook() {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 from-gray-50 to-white">
       <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
         Why Book With Us?
       </h2>
